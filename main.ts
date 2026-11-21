@@ -1,7 +1,9 @@
-// csv-reader 1.0.0, the house entry, make.fun's own reference program: the harness runs `node /bot/main.ts` (node22). It reads every case from /input/cases.json (a JSON
-// array of {id, input}), answers each one alone with run() from solve.js, and writes /output/answers.json: a JSON
-// array of the answers, one per case and in the cases' order. An entry keeps this driver and replaces solve.js with a
-// faster module whose run(input) returns the same answer for every input. Outside a container MAKEFUN_INPUT_DIR and MAKEFUN_OUTPUT_DIR stand in for /input and /output.
+// csv-reader-speed-01 entry (make.fun bounty, 21 November 2026): the harness runs `node /bot/main.ts` (node22). It
+// reads every case from /input/cases.json (a JSON array of {id, input}), answers each one alone with run() from
+// solve.js, and writes /output/answers.json: a JSON array of the answers, one per case and in the cases' order.
+// solve.js is this entry's original, dependency-free fast parser; it returns exactly what make.fun's csv-reader 1.0.0
+// returns (see tools/check.mjs and tools/bench.mjs). Outside a container MAKEFUN_INPUT_DIR and MAKEFUN_OUTPUT_DIR
+// stand in for /input and /output.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
